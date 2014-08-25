@@ -4,7 +4,7 @@ set(WinArm_FOUND TRUE)
 
 set(WINARM_BASE ${CMAKE_CURRENT_LIST_DIR})
 
-macro(set_arm_flags_base SIMULATOR)
+macro(set_winarm_flags_base SIMULATOR)
   if (NOT ${SIMULATOR})
     set(CMAKE_TOOLCHAIN_FILE ${WINARM_BASE}/toolchain.cmake)
     message(STATUS "Set toolchain")
@@ -45,11 +45,11 @@ macro(set_arm_flags_base SIMULATOR)
 endmacro ()
 
 
-macro(set_arm_flags)
+macro(winarm_flags)
   if (SIMULATE)
-    set_arm_flags_base(TRUE)
+    set_winarm_flags_base(TRUE)
   else ()
-    set_arm_flags_base(FALSE)
+    set_winarm_flags_base(FALSE)
   endif()
 endmacro ()
 
