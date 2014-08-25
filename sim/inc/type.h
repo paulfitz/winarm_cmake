@@ -24,9 +24,10 @@
 #define TRUE    (1)
 #endif
 
+#include <stdint.h>
 typedef unsigned char  BYTE;
-typedef unsigned short WORD;
-typedef unsigned long  DWORD;
+typedef int16_t WORD;
+typedef int32_t DWORD;
 typedef unsigned int   BOOL;
 
 #endif  /* __TYPE_H__ */
