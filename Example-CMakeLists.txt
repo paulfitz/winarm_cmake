@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 2.8)
+
+find_package(WinArm REQUIRED)
+
+set_arm_flags()
+
+project(foo)
+
+include_directories(${WinArm_INCLUDE_DIRS})
+
+set(PROGRAM_SRCS
+  foo.c
+  bar.c)
+
+add_executable(foo ${PROGRAM_SRCS} ${WinArm_SRCS})
+target_link_libraries(foo ${WinArm_LIBRARIES})
+
+winarm_tweak(${PROGRAM_SRCS})
+
+if (NOT WinArm_SIMULATED)
+  add_custom_target(foo.hex ALL DEPENDS foo COMMAND ${WinArm_HEXIFY} foo foo.hex)
+endif ()
+
