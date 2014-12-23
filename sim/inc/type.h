@@ -26,8 +26,8 @@
 
 #include <stdint.h>
 typedef unsigned char  BYTE;
-typedef int16_t WORD;
-typedef int32_t DWORD;
+typedef uint16_t WORD;
+typedef uint32_t DWORD;
 typedef unsigned int   BOOL;
 
 #endif  /* __TYPE_H__ */
